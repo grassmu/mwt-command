@@ -20,10 +20,10 @@
 ---
 ## javascript文件头部注释说明
 
- - @file-main   声明该CMD模块是主入口文件，打包后的文件会以该文件命名
- - @file-name=xxxx   可选，声明该主文件打包后的文件命名，默认为该文件名字+时间戳.js
+ - @file-main   		声明该CMD模块是主入口文件，打包后的文件会以该文件命名
+ - @file-name=xxxx   	可选，声明该主文件打包后的文件命名，默认为该文件名字+时间戳.js
  - @file-group=number   打包程序会查找该变量，将相同number的文件打包在一起，会结合上述的priority参数(eg: @data-group=1)
- - @file-alone  该文件会被独立打包
+ - @file-alone  		该文件会被独立打包
  - @file-type=public
  - @file-type=business
 
@@ -31,7 +31,6 @@
 	@data-group=1
   	@file-name=address
   	@data-main
- 
 
 ----------
 
