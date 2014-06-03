@@ -1,0 +1,26 @@
+{
+    "name": "wmt-command",
+    "version": "0.0.1",
+    "description": "WMT前端开发环境命令行程序",
+    "main": "./index.js",
+    "bin": {
+        "showDir": "bin/wmt"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "wmt"
+    ],
+    "author": "kardelchen",
+    "license": "mit",
+    "dependencies": {
+        "commander": "*",
+        "uglify-js": "*",
+        "cmd-util": "*",
+        "colors": "*",
+        "dot": "*",
+        "underscore": "*",
+        "fs-extra": "*"
+    }
+}

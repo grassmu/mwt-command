@@ -1,0 +1,9 @@
+{
+    "basicFiles":{
+        "zepto":"http://3glogo.gtimg.com/o2ov1/test/zepto.js",
+        "util":"http://3glogo.gtimg.com/o2ov1/test/util.js",
+        "seajs":"http://3glogo.gtimg.com/o2ov1/test/sea.js"
+
+    },
+    "tempDirName":".build"
+}
