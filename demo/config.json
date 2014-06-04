@@ -1,0 +1,19 @@
+{
+    "javascript": {
+        "baseDir": "./assets/js",
+        "publicSeq": ["zepto.js", "common.js"],
+        "clean": true,
+        "packageType": "single",
+        "dest":"./publish"
+    },
+    "template": {
+        "baseDir": "./templates",
+        "tplDest": "./publish/templates",
+        "templates": {
+
+        }
+    },
+    "css": {
+
+    }
+}

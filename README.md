@@ -1,4 +1,4 @@
-﻿# mwt配置文件指南
+﻿# mwt配置文件指南(config.json)
 
 ---
 ## javascript配置项
