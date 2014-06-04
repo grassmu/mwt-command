@@ -13,7 +13,7 @@ exports.run = function() {
     } else {
         var program = require("commander");
         commandList.forEach(function(c) {
-            var module = require("./lib/command/wmt-"+c);
+            var module = require("./lib/command/mwt-"+c);
             module.registeCommand(
                 program.command(c).description(module.desc).usage(module.usage)
             );
@@ -25,13 +25,13 @@ exports.run = function() {
 function showHelp() {
     var content = [
         '',
-        '  Usage: wmt <command>',
+        '  Usage: mwt <command>',
         '',
         '  Commands:',
         ''
     ];
     commandList.forEach(function(c) {
-        var module = require("./lib/command/wmt-"+c);
+        var module = require("./lib/command/mwt-"+c);
         content.push('    ' + c +" " + (module.desc || ''));
     });
 
@@ -47,5 +47,5 @@ function showHelp() {
 }
 
 function showVersion() {
-    wmt.show.showResult("wmt version "+version);
+    wmt.show.showResult("mwt version "+version);
 }

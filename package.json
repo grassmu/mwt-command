@@ -1,10 +1,10 @@
 {
-    "name": "wmt-command",
+    "name": "mwt-command",
     "version": "0.0.1",
-    "description": "WMT前端开发环境命令行程序",
+    "description": "mobile workflow tool,前端开发环境命令行程序",
     "main": "./index.js",
     "bin": {
-        "showDir": "bin/wmt"
+        "showDir": "bin/mwt"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
