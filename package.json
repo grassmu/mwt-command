@@ -10,8 +10,9 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
-        "wmt"
+        "mwt"
     ],
+	"repository":"https://github.com/grassmu/mwt-command",
     "author": "kardelchen",
     "license": "mit",
     "dependencies": {
@@ -21,6 +22,6 @@
         "colors": "*",
         "dot": "*",
         "underscore": "*",
-        "fs-extra": "*"
+        "watch":"*"
     }
 }

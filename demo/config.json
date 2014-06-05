@@ -13,6 +13,16 @@
 
         }
     },
+    "ftp":{
+        "ip":"",
+        "port":"",
+        "username":"",
+        "password":"",
+        "mapping":{}
+    },
+    "svn":{
+
+    },
     "css": {
 
     }

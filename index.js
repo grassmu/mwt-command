@@ -1,5 +1,5 @@
-var wmt = require("./lib/kernel/global/kernel"),
-    commandList = ["init", "registe", "update", "compile", "use"],
+var mwt = require("./lib/kernel/global/kernel"),
+    color = require("colors"),
     argv = process.argv,
     version = "0.0.1",
     firstOrder = argv[2];
@@ -12,7 +12,8 @@ exports.run = function() {
         showVersion();
     } else {
         var program = require("commander");
-        commandList.forEach(function(c) {
+        // 获取mwt的命令列表
+        mwt.getCommand().forEach(function(c) {
             var module = require("./lib/command/mwt-"+c);
             module.registeCommand(
                 program.command(c).description(module.desc).usage(module.usage)
@@ -30,9 +31,9 @@ function showHelp() {
         '  Commands:',
         ''
     ];
-    commandList.forEach(function(c) {
+    mwt.getCommand().forEach(function(c) {
         var module = require("./lib/command/mwt-"+c);
-        content.push('    ' + c +" " + (module.desc || ''));
+        content.push('    ' + c.bold.yellow +" " + (module.desc || ''));
     });
 
     content = content.concat([
@@ -47,5 +48,5 @@ function showHelp() {
 }
 
 function showVersion() {
-    wmt.show.showResult("mwt version "+version);
+    mwt.show.showResult("mwt version "+version);
 }
