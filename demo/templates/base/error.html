@@ -1,0 +1,23 @@
+window.onerror = function(msg, url, line) {
+    var stack = getCallStack(), ts,
+        img = new Image();
+    // 测试环境不上报，特殊问题不上报，不在微信内不上报
+    if(env || /Script error/.test(msg) || !wxArr) {
+        return;
+    }
+    ts = String(msg).replace(/\n/g, " ") + "|" + encodeURIComponent(url + ":" + stack) + "|" + line;
+    img.src = "http://party.paipai.com/cgi-bin/badjs?Browser=" + ((sysArr && sysArr[0])+"-"+(wxArr && wxArr[1])) + "&Url=" + encodeURIComponent(location.href) + "&Content=" + ts + "&t=" + (new Date().getTime());
+}
+function getCallStack() {
+    var callList = arguments.callee.caller.caller;
+    if (callList) {
+        var o = [];
+        while (callList) {
+            o.push('[' + JSON.stringify(callList.arguments) + ']' + callList.toString().replace(/[\t\n\r]/g, "").substring(0, 100));
+            callList = callList.caller;
+        }
+        return o.join(":");
+    } else {
+        return "";
+    }
+}

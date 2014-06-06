@@ -8,7 +8,7 @@
     },
     "template": {
         "baseDir": "./templates",
-        "tplDest": "./publish/templates",
+        "dest": "./publish/templates",
         "templates": {
 
         }

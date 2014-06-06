@@ -1,0 +1,50 @@
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="cleartype" content="on">
+<script type="text/javascript">
+    var version = '201404031034',
+            ret = location.host.match(/(\w+)\.?weigou/),
+            env = ret && ret.length >= 2 ? ret[1] : "",
+            env = (env == "dev" ? "beta" : env),
+            env = env ? "/"+env : "",
+            basePath = "http://"+location.hostname+"/o2ov1",
+            reportTime = [+new Date()],
+            prefix = '<link type="text/css" rel="styleSheet" href="http://3glogo.gtimg.com/o2ov1',
+            ua = navigator.userAgent,
+            sysArr = ua.match(/android|iphone|ipad|ipod|blackberry|windows phone|nokia/i),
+            wxArr = ua.match(/micromessenger\/([0-9\.]*)/i);
+    if(/Windows Phone|NOKIA|Nokia/.test(navigator.userAgent)) {
+        alert("友情提醒：您的手机可能无法正常展示该页面，适配您机器的版本正在开发中...");
+    }
+    document.write(prefix+(env)+'/static/style/css/shoucangjia.css?v='+version+'" />');
+</script>
+<script type="text/javascript">
+    reportTime.push(+new Date());
+    window.onerror = function(msg, url, line) {
+        var stack = getCallStack(), ts,
+                img = new Image();
+        // 测试环境不上报，特殊问题不上报，不在微信内不上报
+        if(env || /Script error/.test(msg) || !wxArr) {
+            return;
+        }
+        ts = String(msg).replace(/\n/g, " ") + "|" + encodeURIComponent(url + ":" + stack) + "|" + line;
+        img.src = "http://party.paipai.com/cgi-bin/badjs?Browser=" + ((sysArr && sysArr[0])+"-"+(wxArr && wxArr[1])) + "&Url=" + encodeURIComponent(location.href) + "&Content=" + ts + "&t=" + (new Date().getTime());
+    }
+    function getCallStack() {
+        var callList = arguments.callee.caller.caller;
+        if (callList) {
+            var o = [];
+            while (callList) {
+                o.push('[' + JSON.stringify(callList.arguments) + ']' + callList.toString().replace(/[\t\n\r]/g, "").substring(0, 100));
+                callList = callList.caller;
+            }
+            return o.join(":");
+        } else {
+            return "";
+        }
+    }
+</script>

@@ -22,6 +22,8 @@
         "colors": "*",
         "dot": "*",
         "underscore": "*",
-        "watch":"*"
+        "watch":"*",
+        "cheerio":"*",
+        "node-static":"*"
     }
 }

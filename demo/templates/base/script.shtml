@@ -1,0 +1,19 @@
+<script type="text/javascript">
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.invoke('hideToolbar', function(res) {});
+    });
+    var supportsOrientationChange = "onorientationchange" in window, orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+    // 监听事件
+    window.addEventListener(orientationEvent, function () {
+        window.location.reload();
+    }, false);
+</script>
+<script type="text/javascript" src="../../assets/js/base/sea.js"></script>
+<script type="text/javascript">
+    seajs.config({
+        base: ../../assets/js/,
+        map: [
+            [ /^(.*\.(?:css|js))(.*)$/i, "$1?t=20145201133"]
+        ]
+    });
+</script>
