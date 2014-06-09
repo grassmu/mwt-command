@@ -10,7 +10,8 @@
         "baseDir": "./templates",
         "dest": "./publish/templates",
         "templates": {
-
+            "item":["item-detail.html"],
+            "deal":["dealConfirm.html"]
         }
     },
     "ftp":{
