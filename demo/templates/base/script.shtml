@@ -8,12 +8,14 @@
         window.location.reload();
     }, false);
 </script>
+<!--seajs begin-->
 <script type="text/javascript" src="../../assets/js/base/sea.js"></script>
 <script type="text/javascript">
     seajs.config({
         base: ../../assets/js/,
-        map: [
-            [ /^(.*\.(?:css|js))(.*)$/i, "$1?t=20145201133"]
-        ]
+            map: [
+        [ /^(.*\.(?:css|js))(.*)$/i, "$1?t=20145201133"]
+    ]
     });
 </script>
+<!--seajs end-->

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>商品详情</title>
+    <!--#include virtual="../base/style.shtml" -->
+</head>
+<body>
+<div id="container" style="height: 100%;" class="ui-no-tap-highlight"></div>
+<script type="template" id="content-tpl">
+    <!--#include virtual="tpl/content.dot" -->
+</script>
+<script type="template" id="item-tpl">
+    <!--#include virtual="tpl/item.dot" -->
+</script>
+<script type="template" id="favorTip-tpl">
+    <!--#include virtual="tpl/favorTip.jst" -->
+</script>
+<!--dependency placeholder-->
+
+<!--#include virtual="../base/script.shtml" -->
+<script type="text/javascript">
+    seajs.use("item/item-detail", function(item){
+        reportTime.push(+new Date());
+        item.itemDetailInit();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{{~it.propList :pro:index}}
+<dl class="mod_dl mod_mb15 mod_lh_l qb_clearfix ui-mt-medium">
+    <dt>{{=pro.pName}}：</dt>
+    <dd class="qb_color_weak mod_property" skuName="{{=pro.pName }}" index="{{=index}}">
+        {{~pro.pList :pl}}
+        <span et="wg_tap:choseProperty" class="property {{=pl.className}}" data-value="{{=pl.key}}">{{=pl.sname}}</span>
+        {{~}}
+    </dd>
+</dl>
+{{~}}

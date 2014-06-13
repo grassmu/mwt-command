@@ -1,0 +1,45 @@
+<div class="lay_page_wrap mod-favorite-product-confirm" style="height: 100%;">
+    <ul class="mod-favorite-product-confirm__box ui-pt-large">
+        {{~it.item :val:index}}
+        <li class="mod-favorite-product-confirm__info ui-ml-large">
+            <img class="mod-favorite-product-confirm__img" src="{{=val.itemImg}}" />
+            <div class="mod-favorite-product-confirm__name ui-mb-small">{{=val.itemName}}</div>
+            <div class="mod-favorite-product-confirm__detail">{{=it.bc}}件&nbsp;&nbsp;&nbsp;{{=decodeURIComponent(it.attr)}}</div>
+            <div class="mod-favorite-product-confirm__price">{{?it.hasVipPrice}}会员价{{??}}微信价{{?}}：<span class="mod-favorite-product-confirm__price_strong">&yen;{{?it.hasVipPrice}}{{=(it.vipPrice/100).toFixed(2)}}{{??}}{{=(val.itemPrice/100).toFixed(2)}}{{?}}</span></div>
+        </li>
+        {{~}}
+        <div class="mod-favorite-product-confirm__all-price ui-ml-large ui-mr-large ui-mt-small ui-mb-small ui-pb-medium">
+            支付总价：
+            <span class="mod-favorite-product-confirm__all-price_strong" id="total-price">&yen;{{=(val.itemPrice/100).toFixed(2)}}</span>
+            <span class="mod-favorite-product-confirm__all-price_weak" id="fee-node"></span>
+        </div>
+    </ul>
+    <div id="promote" class="mod-favorite-product-confirm__coupon-box ui-pt-medium ui-pl-medium ui-pr-medium"></div>
+    {{? it.hasAddr}}
+    <div id="shipFee-list" class="mod-favorite-product-confirm__coupon-box mod-favorite-product-confirm__coupon-box_single ui-pl-medium ui-pr-medium">
+        <ul>
+            <li class="mod-favorite-product-confirm__coupon-item mod-favorite-product-confirm__coupon-item_dropdown mod-favorite-product-confirm__coupon-item_none">
+                <select et="change:deliveryChange">
+                    {{~it.shipList :val:index}}
+                    <option value="{{=val.fee}}" mtype="{{=val.mtype}}" ptype="{{=val.ptype}}">{{=val.name}}</option>
+                    {{~}}
+                </select>
+            </li>
+        </ul>
+    </div>
+    {{?}}
+    <div et="wg_tap:toAddr" class="mod-favorite-product-confirm__address-box mod-favorite-product-confirm__list ui-p-large ui-ml-medium ui-mr-medium ui-mb-medium ui-mt-large">
+        {{? it.hasAddr}}
+        <span class="ui-fl-l">收货人：</span>
+        <span class="bfc ui-pr-large">{{=it.buyer.name}} <span class="ui_color_weak ui-ml-small">{{=it.buyer.mobile}}</span></span>
+        <div class="mod-favorite-product-confirm__address_info">{{=it.buyer.address}}</div>
+        {{??}}
+        点击添加收货地址
+        {{?}}
+    </div>
+
+
+    <div class="ui-ov-h ui-ta-c ui-pb-medium">
+        <span et="wg_tap:toPay" class="mod-favorite__submit-btn mod-favorite__submit-btn_current ui-m-large">{{=it.btnText}}</span>
+    </div>
+</div>

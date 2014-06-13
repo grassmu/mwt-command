@@ -1,0 +1,12 @@
+<div class="mod-favorite-product-detail mod-favorite-product-detail_android23 lay_page page_detail current {{?!it.android23}}mod-favorite-product-detail_rounded{{?}}" id="descDialog" style="{{=it.outerStyle}}">
+    <div class="lay_page_wrap">
+        <div class="fn_detail qb_fs_l ui-ov-h">
+            <div et="wg_tap:closeDescDialog" class="mod-favorite-product-detail__title mod-favorite-product-detail__title_down ui-pt-medium ui-pb-medium">
+                <div class="mod-favorite-product-detail__text">商品详情</div>
+            </div>
+            <div style="{{=it.innerStyle}}" class="inner-container qb_gap mod-favorite-product-confirm__coupon-box mod-favorite-product-confirm__coupon-box_single">
+                {{=it.itemDesc}}
+            </div>
+        </div>
+    </div>
+</div>

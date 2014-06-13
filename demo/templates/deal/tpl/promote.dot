@@ -1,0 +1,8 @@
+<li class="mod-favorite-product-confirm__coupon-item mod-favorite-product-confirm__coupon-item_dropdown">
+    <select et="change:{{=it.tag}}">
+        {{~it.list :t}}
+        <option value="{{=t.id}}" id="{{=t.id}}" amount="{{=t.amount}}" free="{{=t.free}}">{{=t.formatDesc}}</option>
+        {{~}}
+        <option value="-1" id="{{=it.noneId}}">{{=it.typeText}}</option>
+    </select>
+</li>

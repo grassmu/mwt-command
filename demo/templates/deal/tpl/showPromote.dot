@@ -1,0 +1,3 @@
+<li class="mod-favorite-product-confirm__coupon-item mod-favorite-product-confirm__coupon-item_dropdown mod-favorite-product-confirm__coupon-item_text-only">
+    {{=it.desc}}
+</li>

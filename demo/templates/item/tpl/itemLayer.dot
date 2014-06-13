@@ -1,0 +1,30 @@
+<div class="mod-favorite-product-detail mod-favorite-product-detail_android23 lay_page page_detail current {{?!it.android23}}mod-favorite-product-detail_rounded{{?}}" id="dialog" style="{{=it.outerStyle}}bottom:auto;">
+    <div class="lay_page_wrap">
+        <div class="fn_detail qb_fs_l ui-ov-h">
+            <div et="wg_tap:closeAttrLayer" class="mod-favorite-product-detail__title mod-favorite-product-detail__title_down ui-pt-medium ui-pb-medium">
+                <img class="mod-favorite-product-detail__img ui-mr-medium" src="{{=it.imgSrc}}" id="property-img"/>
+                <div class="mod-favorite-product-detail__text">{{=it.itemName}}</div>
+                <span class="mod-favorite-product-detail__price" id="afterPrice">&yen;{{? it.hasVipPrice}}{{=it.vipPrice4Cash}}{{??}}{{=it.itemPrice}}{{?}}</span>
+                <span class="mod-favorite-product-detail__before-price" id="beforePrice">{{? it.hasVipPrice}}&yen;{{=it.itemPrice}}{{?}}</span>
+            </div>
+            <div style="{{=it.innerStyle}}" id="inner-container" class="ui-ml-medium mod-favorite-product-confirm__coupon-box mod-favorite-product-confirm__coupon-box_single">
+                {{#def.prop}}
+                <dl class="mod_dl mod_lh_l mod_mb15 qb_clearfix ui-mt-medium">
+                    <dt>数量：</dt>
+                    <dd class="mod_color_weak">
+                    <span class="quantity">
+                        <span class="minus" tag="sub" et="wg_tap:minusPlus"><i class="qb_icon icon_minus"></i></span>
+                        <input type="tel" id="buyNum" value="1" et="wg_tap:handleInput">
+                        <span class="plus" tag="add" et="wg_tap:minusPlus"><i class="qb_icon icon_plus"></i></span>
+                    </span>
+                        <span class="qb_fs_s mod_color_comment"><br>剩余<span id="stock-num">{{=it.totalStock}}</span>件</span>
+                    </dd>
+                </dl>
+            </div>
+            <hr class="qb_hr">
+            <div class="ui-mb-large ui-ta-c">
+                <span class="mod-favorite__submit-btn mod-favorite__submit-btn_current" id="buy-node" et="wg_tap:handleBuy">立即购买</span>
+            </div>
+        </div>
+    </div>
+</div>

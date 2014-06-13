@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+    <html lang="zh-CN">
+    <head>
+        <title>订单确认</title>
+        <!--#include virtual="../base/style.shtml" -->
+</head>
+<body>
+<div id="container" style="background-color: #E1E0DE;height: 100%;" class="ui-no-tap-highlight">
+    <div class="mod-spinner">
+        <div class="mod-overlay"></div>
+        <div class="mod-spinner__inner">
+            <p class="mod-spinner__spinner"></p>
+            <p class="mod-spinner__text" id="bubble-text">正在加载...</p>
+        </div>
+    </div>
+</div>
+<script type="template" id="content-tpl">
+    <!--#include virtual="tpl/content.dot" -->
+</script>
+<script type="template" id="promote-tpl">
+    <!--#include virtual="tpl/promote.dot" -->
+</script>
+<script type="template" id="showPromote-tpl">
+    <!--#include virtual="tpl/showPromote.dot" -->
+</script>
+<!--dependency placeholder-->
+<!--#include virtual="../base/script.shtml" -->
+<script type="text/javascript">
+    seajs.use("deal/deal-confirm", function(obj) {
+        reportTime.push(+new Date());
+        obj.confirmOrder();
+    });
+</script>
+</body>
+</html>

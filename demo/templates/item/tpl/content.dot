@@ -1,0 +1,62 @@
+{{?it.share}}
+<div class="mod-share-tips mod-share-tips_float" id="share-tips">
+    <span class="mod-share-tips__img mod-share-tips__img_fenxiang"></span>
+</div>
+{{?}}
+<div class="lay_page mod-favorite ui-ov-h lay_page_wrap" id="page" style="min-height:{{=it.pageHeight}}px;">
+    <div class="mod-favorite__product-box ui-mt-medium ui-mb-large">
+        <div class="mod-favorite__product-img-box" style="min-height:{{=it.height}}px; max-height:{{=it.height}}px; overflow-y:hidden;">
+            <img class="mod-favorite__product-img" src="{{=it.itemPics[0]}}" et="wg_tap:openWeixinImg" />
+        </div>
+        <div class="mod-favorite-product__more ui-mb-large">
+            <div class="mod-favorite-product__property">
+                <span class="mod-favorite-product__name ui-pl-medium">{{=it.itemName}}</span>
+            </div>
+            <div class="mod-favorite-product__price-box">
+                {{? it.hasVipPrice }}
+                <span class="mod-favorite-product__after-price"><span class="mod-single-product__dollor">&yen;</span>{{=(it.vipPrice/100).toFixed(2)}}</span>
+                <span class="mod-favorite-product__before-price"><span class="mod-single-product__dollor">&yen;</span>{{=(it.itemPrice/100).toFixed(2)}}</span>
+                <i class="icon mod-favorite-product__vip"></i>
+                {{??}}
+                <span class="mod-favorite-product__price"><span class="mod-single-product__dollor">&yen;</span>{{=(it.itemPrice/100).toFixed(2)}}</span>
+                {{?}}
+            </div>
+        </div>
+        <div class="mod-favorite__act-box ui-ov-h ui-ml-medium ui-mr-medium ui-mb-medium">
+            <div class="mod-favorite__add mod-favorite__add_actived ui-fl-l ui-pl-small ui-pr-small" et="wg_tap:{{?!it.favored}}addFavor{{??}}cancelFavor{{?}}">{{?!it.favored}}加入收藏夹{{??}}取消收藏{{?}}</div>
+            {{? it.itemStatus == 0}}
+            <div id="buy-now" class="mod-favorite__add ui-fl-r ui-pl-small ui-pr-small" data-index="0" et="wg_tap:showItemLayer">立即购买</div>
+            {{??}}
+            <div class="mod-favorite__add mod-favorite__add_disabled ui-fl-r ui-pl-small ui-pr-small">{{=it.itemStatusText}}</div>
+            {{?}}
+        </div>
+        <div class="mod-favorite-meta">
+            <ul class="mod-favorite-meta__list lay-flex">
+                <li et="wg_tap:showDescDialog" class="mod-favorite-meta__item lay-flex__item ui-ta-l">
+                    <i class="icon mod-favorite-meta__icon mod-favorite-meta__icon_list"></i>
+                    详情
+                </li>
+                {{? it.guideItem}}
+                <li class="mod-favorite-meta__item lay-flex__item ui-ta-r" et="wg_tap:toGuidePage">
+                    <i class="icon mod-favorite-meta__icon mod-favorite-meta__icon_match"></i>
+                    查看搭配
+                </li>
+                {{?}}
+            </ul>
+        </div>
+    </div>
+    <div class="mod-favorite__product-box ui-mt-medium ui-mb-large">
+        <div class="mod-favorite-list">
+            <ul class="mod-favorite-list__list">
+                <li class="mod-favorite-list__item" et="wg_tap:toFavoriteList">
+                    <i class="mod-favorite-list__icon mod-favorite-list__icon_collection"></i>
+                    我的收藏夹
+                </li>
+                <li class="mod-favorite-list__item" et="wg_tap:showQrCode">
+                    <i class="mod-favorite-list__icon mod-favorite-list__icon_counselor"></i>
+                    {{?it.hasBindSaler}}修改{{??}}关联{{?}}专属顾问
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

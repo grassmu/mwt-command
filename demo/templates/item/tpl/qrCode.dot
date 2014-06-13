@@ -1,0 +1,20 @@
+{{?it.topText}}
+<div class="mod-standard-dialog__header ui-pt-large ui-pb-large">
+    <div class="mod-standard-dialog__header-title ui-ta-c">
+        {{=it.topText}}
+    </div>
+</div>
+{{?}}
+<div class="mod-standard-dialog__body mod-standard-dialog__body_gray ui-p-large">
+    <div class="mod-standard-dialog__info ui-ta-c" {{? it.sub}}style="text-align: left;"{{?}}>
+    <p>{{=it.top}}</p>
+</div>
+<img class="mod-standard-dialog__qrcode ui-d-b ui-m-auto ui-mt-medium" src="{{=it.qrCode}}" />
+{{? it.sub}}
+<div class="mod-standard-dialog__info ui-ta-c" style="text-align: left; margin-top:10px;">
+    <p>{{=it.sub}}</p>
+</div>
+{{?}}
+</div>
+
+{{#def.prop}}

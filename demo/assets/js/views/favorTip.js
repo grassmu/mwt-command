@@ -1,0 +1,3 @@
+(function(){function favorTip(it) {
+var out='<div class="mod-standard-dialog" id="favor-dialog"> <div class="mod-standard-dialog__mask"></div> <div class="mod-standard-dialog__box"> <div id="dialog-content">{#content#}</div> <hr class="mod-standard-dialog__hr"> <div class="mod-standard-dialog__footer mod-standard-dialog__footer_gray"> <div id="dialog-btn" class="mod-standard-dialog__submit-btn ui-ta-c ui-pt-medium ui-pb-medium" et="wg_tap:closeQrDialog">我知道了</div> </div> </div></div>';return out;
+}var itself=favorTip;if(typeof module!=='undefined' && module.exports) module.exports=itself;else if(typeof define==='function')define(function(){return itself;});else {window.render=window.render||{};window.render['favorTip']=itself;}}());

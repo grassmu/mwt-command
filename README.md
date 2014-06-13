@@ -1,4 +1,4 @@
-﻿# mwt配置文件指南(config.json)
+# mwt配置文件指南(config.js)
 
 ---
 ## javascript配置项
@@ -39,4 +39,20 @@
 > - include写法和ssi保持一致，即服务器需要支持ssi配置
 > - 模板文件统一使用dot后缀 `<!--#include virtual="dot/addr.dot" -->`
 > - include的路径必须使用相对路径，否则在编译的时候找不到文件include进来
+> - 不支持跨目录include和编译
  
+
+----------
+
+ #watch命令配置
+ - 开启watch，默认会启动nodejs的静态服务器
+ - tplToJs 是否编译模板为js的function，并替换
+ - tplToJsFile	是否编译模板文件为js文件
+ - copyStaticFile	拷贝静态文件到nodejs静态服务器 （true|false）
+
+----------
+
+
+ #server命令配置
+ - port	静态服务器端口
+ - liveReload	是否开启动态刷新浏览器
